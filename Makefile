@@ -11,7 +11,7 @@ SRC = main.cpp hashTable.cpp linkedList.cpp
 OBJ = $(SRC:.cpp=.o)
 
 # Executable name
-TARGET = program
+TARGET = main
 
 # Default target
 all: $(TARGET)
