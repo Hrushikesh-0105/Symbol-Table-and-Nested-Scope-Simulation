@@ -1,14 +1,17 @@
 #include "hashTable.h"
 
 int HashTable :: generateHash(string s) {
-    const int mod = MAXSIZE;//defined in hashtable.h
-    uint32_t hashValue=2166136261u;
     int n=s.length();
+    const int mod = MAXSIZE;//defined in hashtable.h
+    int p=31;
+    int prod=1;
+    int hashValue=0;
     for(int i=0;i<n;i++){
-        hashValue ^= (unsigned char)s[i];
-        hashValue *= 16777619;  
+        hashValue=(hashValue+((int)s[i]) *prod)%mod;
+        prod=(prod*p)%mod;
     }
-    return hashValue % mod;
+    //prod ensures "acb" and "abc" will not get same hash value
+    return hashValue;
 }
 
 bool HashTable::insertUpdate(string key ,string value){
