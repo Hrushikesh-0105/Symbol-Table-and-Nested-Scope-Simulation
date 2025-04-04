@@ -1,4 +1,6 @@
 //Created by- Hrushikesh Musaloj (BT23CSE024)
+//To run compile the file use: g++ linkedList.cpp hashTable.cpp main.cpp
+//or use the make command to compile and run ./main
 #include<bits/stdc++.h>
 #include <fstream>
 #include "hashTable.h"
